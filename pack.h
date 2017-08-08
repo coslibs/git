@@ -124,8 +124,6 @@ extern char *sha1_pack_name(const unsigned char *sha1);
  */
 extern char *sha1_pack_index_name(const unsigned char *sha1);
 
-extern unsigned int pack_open_fds;
-
 extern void pack_report(void);
 
 /*
@@ -151,5 +149,7 @@ extern int open_packed_git(struct packed_git *p);
 extern unsigned char *use_pack(struct packed_git *, struct pack_window **, off_t, unsigned long *);
 extern void unuse_pack(struct pack_window **);
 extern struct packed_git *add_packed_git(const char *path, size_t path_len, int local);
+
+extern void install_packed_git(struct packed_git *pack);
 
 #endif
