@@ -262,7 +262,7 @@ const void *get_commit_buffer(const struct commit *commit, unsigned long *sizep)
 	const void *ret = get_cached_commit_buffer(commit, sizep);
 	if (!ret) {
 		enum object_type type;
-		unsigned long size;
+		size_t size;
 		ret = read_sha1_file(commit->object.oid.hash, &type, &size);
 		if (!ret)
 			die("cannot read commit object %s",
@@ -373,7 +373,7 @@ int parse_commit_gently(struct commit *item, int quiet_on_missing)
 {
 	enum object_type type;
 	void *buffer;
-	unsigned long size;
+	size_t size;
 	int ret;
 
 	if (!item)
@@ -1204,7 +1204,7 @@ static void handle_signed_tag(struct commit *parent, struct commit_extra_header 
 	struct merge_remote_desc *desc;
 	struct commit_extra_header *mergetag;
 	char *buf;
-	unsigned long size, len;
+	size_t size, len;
 	enum object_type type;
 
 	desc = merge_remote_util(parent);
