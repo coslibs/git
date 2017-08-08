@@ -149,5 +149,6 @@ extern void close_all_packs(void);
 extern int open_packed_git(struct packed_git *p);
 
 extern unsigned char *use_pack(struct packed_git *, struct pack_window **, off_t, unsigned long *);
+extern void unuse_pack(struct pack_window **);
 
 #endif
