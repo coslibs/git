@@ -9,6 +9,7 @@
 #include "remote.h"
 #include "dir.h"
 #include "sha1-array.h"
+#include "pack.h"
 
 static int get_sha1_oneline(const char *, unsigned char *, struct commit_list *);
 

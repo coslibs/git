@@ -135,4 +135,12 @@ extern size_t pack_mapped;
 
 extern void pack_report(void);
 
+/*
+ * mmap the index file for the specified packfile (if it is not
+ * already mmapped).  Return 0 on success.
+ */
+extern int open_pack_index(struct packed_git *);
+
+extern struct packed_git *parse_pack_index(unsigned char *sha1, const char *idx_path);
+
 #endif
