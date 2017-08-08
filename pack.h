@@ -143,4 +143,8 @@ extern int open_pack_index(struct packed_git *);
 
 extern struct packed_git *parse_pack_index(unsigned char *sha1, const char *idx_path);
 
+extern int unuse_one_window(struct packed_git *current);
+
+extern void release_pack_memory(size_t);
+
 #endif
